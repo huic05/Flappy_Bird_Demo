@@ -1,12 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ClassGameScipt : MonoBehaviour
 {
     private GameObject ClickToPlayText;
     private ClassBird bird;
     private GameObject losemenu;
+    private ClassPipeSpawner pipeSpawner;
+    public Sprite silver;
+    public Sprite gold;
+    private Image medal;
+    private TextMeshProUGUI score;
+    private static Data _instance;
+    public int scorecounter = 0;
+    private Data data;
+    private TextMeshProUGUI best;
+    
 
     public enum GameState
     {
@@ -23,6 +36,13 @@ public class ClassGameScipt : MonoBehaviour
         bird = GameObject.Find("Flappy Bird").GetComponent<ClassBird>();
         losemenu = GameObject.Find("Canvas").transform.Find("Lost Menu").gameObject;
         losemenu.SetActive(false);
+        pipeSpawner = GameObject.Find("PipeSpawner").GetComponent<ClassPipeSpawner>();
+        medal = GameObject.Find("Canvas").transform.Find("Lost Menu").transform.Find("Medal").GetComponent<Image>();
+        // score = GameObject.Find("Canvas").transform.Find("Lost menu").transform.Find("Score").GetComponent<TextMeshProUGUI>();
+        data = GameObject.Find("Data").GetComponent<Data>();
+        // best = GameObject.Find("Canvas").transform.Find("Lost menu").transform.Find("Best").GetComponent<TextMeshProUGUI>();
+     
+
     }
 
     // Update is called once per frame
@@ -52,12 +72,14 @@ public class ClassGameScipt : MonoBehaviour
         bird.SetUpBird();
         ClickToPlayText.SetActive(false);
         _currentgame = GameState.Playing;
+
       
 
     }
     private void UpdatePlaying()
     {
         bird.UpdateBird();
+        pipeSpawner.UpdatePipeSpawner();
     }
     public void FromPlayToLoes()
     {
@@ -67,6 +89,49 @@ public class ClassGameScipt : MonoBehaviour
     {
         ClickToPlayText.SetActive(false);
         losemenu.SetActive(true);
+        if (data.GetScore() < counter)
+        {
+            data.SetScore(counter);
+        }
+        best.SetText(data.GetScore().ToString());
+        if (counter >= 10 && counter < 20)
+        {
+            medal.sprite = silver;
+
+        }
+        else if (counter >= 20)
+        {
+            medal.sprite = gold;
+        }
+        score.SetText(counter.ToString());
     }
-   
+    public void Replay()
+    {
+        SceneManager.LoadScene("GameSceneClass");
+    }
+    public void Quit()
+    {
+        SceneManager.LoadScene("MenuSceneClass");
+    }
+    public void Awake()
+    {
+        if(_instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        // _instance = this; // error
+        DontDestroyOnLoad(gameObject);
+
+    }
+    public void SetScore(int s)
+    {
+        scorecounter = s;
+    }
+    public int GetScore()
+    {
+        return scorecounter;
+    }
+
+
 }

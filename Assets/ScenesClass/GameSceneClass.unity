@@ -551,6 +551,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352070938}
   m_CullTransparentMesh: 1
+--- !u!1 &431632690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 431632691}
+  - component: {fileID: 431632692}
+  m_Layer: 0
+  m_Name: Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &431632691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431632690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1610.3579, y: 1088.5303, z: -7.685429}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &431632692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431632690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c262bef8698dffd439751e0bc0edfab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  silver: {fileID: -1577705109, guid: 70097bd88cfc43e4799dd6f087bf0e1c, type: 3}
+  gold: {fileID: 1703816550, guid: 70097bd88cfc43e4799dd6f087bf0e1c, type: 3}
+  scorecounter: 0
+  _currentgame: 0
 --- !u!1 &448285156 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6970692802995538007, guid: 9001548f17a2da6449e77e28fa7a64ae, type: 3}
@@ -670,7 +718,7 @@ GameObject:
   m_Layer: 0
   m_Name: Point 1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -920,7 +968,7 @@ Transform:
   - {fileID: 1376880918}
   - {fileID: 2039846367}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &830808429
 GameObject:
@@ -1078,7 +1126,7 @@ Transform:
   m_Children:
   - {fileID: 796553335}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &832568728
 MonoBehaviour:
@@ -1092,7 +1140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: effd627c7e68a7148b9e909e20712e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceScale: 100
+  forceScale: 10
   scoreText: {fileID: 848325581}
   deathsprite: {fileID: 1201804874, guid: 70097bd88cfc43e4799dd6f087bf0e1c, type: 3}
 --- !u!1 &848325579
@@ -1345,7 +1393,7 @@ RectTransform:
   - {fileID: 267102287}
   - {fileID: 643440434}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1434,7 +1482,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 933889229}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1788098450}
+        m_TargetAssemblyTypeName: ClassGameScipt, Assembly-CSharp
+        m_MethodName: Replay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &933889229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1807,7 +1867,7 @@ Transform:
   - {fileID: 1479902085}
   - {fileID: 277948431}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1411799160
 GameObject:
@@ -1892,7 +1952,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1411799163}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1788098450}
+        m_TargetAssemblyTypeName: ClassGameScipt, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1411799163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1943,7 +2015,7 @@ GameObject:
   m_Layer: 0
   m_Name: Point 2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1955,7 +2027,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479902084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.33, y: -3.01, z: 0}
+  m_LocalPosition: {x: 3.29, y: -3.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2028,7 +2100,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1788098449
 GameObject:
@@ -2059,6 +2131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c262bef8698dffd439751e0bc0edfab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  silver: {fileID: 0}
+  gold: {fileID: 0}
+  scorecounter: 0
   _currentgame: 0
 --- !u!4 &1788098451
 Transform:
@@ -2073,7 +2148,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1876504587
 GameObject:
@@ -2540,7 +2615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7536992239974587064, guid: 9001548f17a2da6449e77e28fa7a64ae, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7536992239974587064, guid: 9001548f17a2da6449e77e28fa7a64ae, type: 3}
       propertyPath: m_LocalPosition.x
